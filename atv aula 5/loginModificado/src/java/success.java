@@ -9,15 +9,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 
 /**
  *
- * @author Kayan
+ * @author ice
  */
-public class Horario extends HttpServlet {
+public class success extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -30,21 +27,22 @@ public class Horario extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        DateTimeFormatter formatador = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        
-        response.setContentType("text/html;charset=UTF-8");
-        try ( PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Horario</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet Horario at " + formatador.format(LocalDateTime.now()) + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+
+                    response.setContentType("text/html;charset=UTF-8");
+                try ( PrintWriter out = response.getWriter()) {
+               /* TODO output your page here. You may use following sample code. */
+               out.println("<!DOCTYPE html>");
+               out.println("<html>");
+               out.println("<head>");
+               out.println("<title>Servlet menu</title>");            
+               out.println("</head>");
+               out.println("<body>");
+               out.println("<h1>Menu</h1>");
+               out.println("<a href='index.html'> sair </a> <br>");
+               out.println("<a href='erro2.html'> erro html </a> <br>");
+               out.println("<a href='success?option=erro'> erro java </a><br>");
+               out.println("</body>");
+               out.println("</html>");
         }
     }
 
