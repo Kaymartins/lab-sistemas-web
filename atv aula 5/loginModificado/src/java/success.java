@@ -3,12 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  *
@@ -27,7 +27,10 @@ public class success extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+                
+            if(request.getParameter("opcao") != null){
+                response.sendRedirect(null);
+            }
                     response.setContentType("text/html;charset=UTF-8");
                 try ( PrintWriter out = response.getWriter()) {
                /* TODO output your page here. You may use following sample code. */
@@ -40,7 +43,7 @@ public class success extends HttpServlet {
                out.println("<h1>Menu</h1>");
                out.println("<a href='index.html'> sair </a> <br>");
                out.println("<a href='erro2.html'> erro html </a> <br>");
-               out.println("<a href='success?option=erro'> erro java </a><br>");
+               out.println("<a href='success?opcao=true'> erro java </a><br>");
                out.println("</body>");
                out.println("</html>");
         }
